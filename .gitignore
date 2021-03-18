@@ -1,0 +1,4 @@
+bundle/
+plugged/
+.netrwhist
+defx.nvim
