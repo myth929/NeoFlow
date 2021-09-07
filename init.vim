@@ -16,9 +16,8 @@ au BufWrite /private/tmp/crontab.* set nowritebackup nobackup
 " Don't write backup file if vim is being called by "chpass"
 au BufWrite /private/etc/pw.* set nowritebackup nobackup
 
+" 完全禁用加载 defaults.vim
 let skip_defaults_vim = 1
-let g:python3_host_prog = '/usr/local/bin/python3.9'
-let g:python_host_prog='/usr/local/bin/python3'
 
 syntax on
 set nu!
@@ -54,6 +53,20 @@ map <leader>' :
 nmap qq :bn<cr>
 "nnoremap w :bp<cr>
 
+"--------------------------文件头默认配置————————————————————————"
+autocmd BufNewFile *.ts,*.tsx,*.js,*.jsx exec ":call SetTitle()" 
+"定义函数SetTitle，自动插入文件头 
+func SetTitle() 
+    call setline(1,          "/**")
+    call append(line("."),   " * @file ".expand("%")) 
+    call append(line(".")+1, " * @author gaozhengguo(gaozhengguo@baidu.com)") 
+    call append(line(".")+2, " */") 
+    call append(line(".")+3, "")
+endfunc
+"新建文件后，自动定位到文件末尾
+autocmd BufNewFile * normal G
+
+"--------------------------neovim plugins————————————————————————"
 " Specify a directory for plugins
 " - For Neovim: stdpath('data') . '/plugged'
 " - Avoid using standard Vim directory names like 'plugin'
@@ -142,7 +155,8 @@ function! s:defx_my_settings() abort
     nnoremap <silent><buffer><expr> cd
     \ defx#do_action('change_vim_cwd')
 endfunction_
-Plug 'kristijanhusak/defx-icons'
+"-------------------------defx-icons------------------------------"
+" Plug 'kristijanhusak/defx-icons'
 "-------------------------git------------------------------"
 Plug 'tpope/vim-fugitive'
 
@@ -175,22 +189,22 @@ Plug 'peitalin/vim-jsx-typescript'
 let g:jsx_ext_required = 0
 
 "---------------------------vue------------------------------------"
-"Plug 'posva/vim-vue'
+Plug 'posva/vim-vue'
 autocmd FileType vue syntax sync fromstart
 
 
 "------------------------ale--------------------------------------"
 Plug 'dense-analysis/ale'
 
-let b:ale_fixers = ['prettier', 'eslint']
-let g:ale_hover_cursor = 1
-let g:ale_hover_to_preview = 1
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\}
-"let g:ale_fix_on_save = 1              "自动补全
-let g:ale_completion_enabled = 1
+" let b:ale_fixers = ['prettier', 'eslint']
+" let g:ale_hover_cursor = 1
+" let g:ale_hover_to_preview = 1
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['eslint'],
+" \}
+" let g:ale_fix_on_save = 1              "自动补全
+" let g:ale_completion_enabled = 1
 "set omnifunc=ale#completion#OmniFunc
 "let g:ale_completion_tsserver_autoimport = 1
 
