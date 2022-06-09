@@ -1,5 +1,3 @@
-local options = {
-    auto_save_buffer = true
-}
+local options = {}
 
 return options

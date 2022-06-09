@@ -1,5 +1,3 @@
-bundle/
-plugged/
-.netrwhist
-defx.nvim
 .history/
+.vscode/
+plugin

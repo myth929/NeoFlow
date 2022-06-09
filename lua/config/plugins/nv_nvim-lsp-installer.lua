@@ -1,11 +1,12 @@
 -- https://github.com/williamboman/nvim-lsp-installer
 
 local mapping = require("core.mapping")
+local CONSTANT = require("utils.constant")
 
 local M = {
     -- 加载的 LSP 配置文件列表
     language_servers_config = {
-        sumneko_lua = require("configure.lsp.sumneko_lua"),
+        sumneko_lua = require("config.lsp.sumneko_lua"),
     },
 }
 
@@ -42,9 +43,7 @@ function M.load()
             },
         },
         github = {
-	        -- 针对中国用户，如果 LSP 服务器下载太慢，可以使用下面的镜像站
-            -- download_url_template = "https://hub.fastgit.xyz/%s/releases/download/%s/%s",
-            download_url_template = "https://github.com/%s/releases/download/%s/%s",
+            download_url_template = CONSTANT.githubSource .. "%s/releases/download/%s/%s",
         },
         max_concurrent_installers = 20,
     })
