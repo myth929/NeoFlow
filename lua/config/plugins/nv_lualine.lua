@@ -13,7 +13,7 @@ function M.load()
     M.lualine.setup({
         options = {
             icons_enabled = true,
-            theme = 'custom_gruvbox',
+            theme = 'dracula',
             component_separators = { left = '', right = ''},
             section_separators = { left = '', right = ''},
             disabled_filetypes = {},
@@ -24,9 +24,8 @@ function M.load()
             lualine_a = {'mode'},
             lualine_b = {'branch', 'diff', 'diagnostics'},
             lualine_c = {'filename'},
-            lualine_x = {'encoding', 'fileformat', 'filetype'},
-            lualine_y = {'progress'},
-            lualine_z = {'location'}
+            lualine_x = {'encoding', 'filetype'},
+            lualine_y = {'location'},
         },
         inactive_sections = {
             lualine_a = {},

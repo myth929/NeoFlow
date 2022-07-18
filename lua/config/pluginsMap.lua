@@ -24,7 +24,9 @@ local packer_install_tbl = {
     },
 
     ----------- nvim-tree -----------
-    ["kyazdani42/nvim-web-devicons"] = {},
+    ["kyazdani42/nvim-web-devicons"] = {
+        module = "nvim-web-devicons",
+    },
     ['kyazdani42/nvim-tree.lua'] = {},
 
     ----------- Code Editor -----------
@@ -32,10 +34,7 @@ local packer_install_tbl = {
         event = { "InsertEnter" },
     },
 
-    -- ['nvim-lualine/lualine.nvim'] = {
-    --     requires = { 'kyazdani42/nvim-web-devicons', opt = true },
-    --     after = { 'kyazdani42/nvim-web-devicons' },
-    -- },
+    ['nvim-lualine/lualine.nvim'] = {},
 
     ["lewis6991/gitsigns.nvim"] = {
         ft = "gitcommit"
