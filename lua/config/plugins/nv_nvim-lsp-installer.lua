@@ -7,6 +7,12 @@ local M = {
     -- 加载的 LSP 配置文件列表
     language_servers_config = {
         sumneko_lua = require("config.lsp.sumneko_lua"),
+        tsserver = require("config.lsp.tsserver"),
+        html = require("config.lsp.html"),
+        cssmodules_ls = require("config.lsp.cssmodules_ls"),
+        volar = require("config.lsp.volar"),
+        yamlls = require("config.lsp.yamlls"),
+        jsonls = require("config.lsp.jsonls"),
     },
 }
 

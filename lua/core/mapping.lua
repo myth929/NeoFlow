@@ -17,50 +17,55 @@ end
 mapping.register({
     {
         mode = { "n" },
-        lhs = "<leader><esc>",
-        rhs = ":qa!<cr>",
+        lhs = "<leader>x",
+        rhs = ":bd <CR>",
         options = { silent = true },
-        description = "Escape Neovim",
-    },
-    {
-        mode = { "i" },
-        lhs = "jj",
-        rhs = "<esc>",
-        options = { silent = true },
-        description = "Escape editor insert mode",
-    },
-    {
-        mode = { "t" },
-        lhs = "<esc>",
-        rhs = "<c-\\><c-n>",
-        options = { silent = true },
-        description = "Escape terminal insert mode",
+        description = "close buffer",
     },
     {
         mode = { "n" },
-        lhs = "<leader>cs",
-        rhs = ":set spell!<cr>",
+        lhs = "<leader>'",
+        rhs = ":",
         options = { silent = true },
-        description = "Enable or disable spell checking",
+        description = ":",
     },
     {
-        mode = { "n", "x" },
-        lhs = "k",
-        rhs = function()
-            return vim.v.count > 0 and "k" or "gk"
-        end,
-        options = { silent = true, expr = true },
-        description = "Move up one line",
+        mode = { "v" },
+        lhs = "<s-tab>",
+        rhs = "<gv",
+        options = { silent = true },
+        description = "<-",
     },
     {
-        mode = { "n", "x" },
-        lhs = "j",
-        rhs = function()
-            return vim.v.count > 0 and "j" or "gj"
-        end,
-        options = { silent = true, expr = true },
-        description = "Move down one line",
+        mode = { "v" },
+        lhs = "<tab>",
+        rhs = ">gv",
+        options = { silent = true },
+        description = "->",
     },
+    {
+        mode = { "v" },
+        lhs = "<leader>c",
+        rhs = '"+y',
+        options = { silent = true },
+        description = "copy",
+    },
+    {
+        mode = { "n" },
+        lhs = "<leader>;",
+        rhs = "<cmd> NvimTreeToggle <CR>",
+        options = { silent = true },
+        description = "nvim tree",
+    },
+    -- {
+    --     mode = { "n", "x" },
+    --     lhs = "j",
+    --     rhs = function()
+    --         return vim.v.count > 0 and "j" or "gj"
+    --     end,
+    --     options = { silent = true, expr = true },
+    --     description = "Move down one line",
+    -- },
 })
 
 return mapping
