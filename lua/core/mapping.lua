@@ -53,7 +53,7 @@ mapping.register({
     {
         mode = { "n" },
         lhs = "<leader>;",
-        rhs = "<cmd> NvimTreeToggle <CR>",
+        rhs = "<cmd> NvimTreeFindFileToggle <CR>",
         options = { silent = true },
         description = "nvim tree",
     },
