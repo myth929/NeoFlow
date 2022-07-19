@@ -3,8 +3,10 @@
 
 -- :help options
 vim.g.mapleader = ';'
-vim.opt.listchars:append('space:⋅')
+
 vim.opt.shortmess:append('c')
+vim.opt.list = true
+vim.opt.listchars:append('space:⋅')
 
 local settings = {
     backup = false, -- creates a backup file

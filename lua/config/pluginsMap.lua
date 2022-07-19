@@ -8,6 +8,11 @@ local packer_install_tbl = {
     -------------- BASIC ---------------
     ["nvim-lua/plenary.nvim"] = {},
 
+    ["nvim-treesitter/nvim-treesitter"] = {
+        module = "nvim-treesitter",
+        run = ":TSUpdate",
+    },
+
     --------------- LSP ---------------
     ["neovim/nvim-lspconfig"] = {},
     ["jose-elias-alvarez/null-ls.nvim"] = {
@@ -41,6 +46,13 @@ local packer_install_tbl = {
     },
 
     ['projekt0n/github-nvim-theme'] = {},
+
+    ["nvim-telescope/telescope.nvim"] = {
+        cmd = "Telescope",
+        requires = { {'nvim-lua/plenary.nvim'} }
+    },
+
+    -- ["lukas-reineke/indent-blankline.nvim"] = {},
 }
 
 return packer_install_tbl

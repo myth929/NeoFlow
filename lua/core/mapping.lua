@@ -57,6 +57,27 @@ mapping.register({
         options = { silent = true },
         description = "nvim tree",
     },
+    {
+        mode = { "n" },
+        lhs = "<C-p>",
+        rhs = "<cmd>Telescope find_files<cr>",
+        options = { silent = true },
+        description = "find_files",
+    },
+    {
+        mode = { "n" },
+        lhs = "<leader>r",
+        rhs = "<cmd>Telescope live_grep<cr>",
+        options = { silent = true },
+        description = "live_grep",
+    },
+    {
+        mode = { "n" },
+        lhs = "<leader>g",
+        rhs = "<cmd> Telescope git_status <CR>",
+        options = { silent = true },
+        description = "git_status",
+    },
     -- {
     --     mode = { "n", "x" },
     --     lhs = "j",
