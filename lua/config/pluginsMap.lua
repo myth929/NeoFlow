@@ -9,7 +9,6 @@ local packer_install_tbl = {
     ["nvim-lua/plenary.nvim"] = {},
 
     ["nvim-treesitter/nvim-treesitter"] = {
-        module = "nvim-treesitter",
         run = ":TSUpdate",
     },
 

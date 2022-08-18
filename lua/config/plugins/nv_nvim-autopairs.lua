@@ -11,7 +11,9 @@ function M.load()
     end
 
     M.nvim_autopairs = m
-    M.nvim_autopairs.setup()
+    M.nvim_autopairs.setup({
+        map_cr = true
+    })
 end
 
 function M.after() end
