@@ -52,6 +52,13 @@ mapping.register({
     },
     {
         mode = { "n" },
+        lhs = "<leader>f",
+        rhs = 'ggVG=',
+        options = { silent = true },
+        description = "code format",
+    },
+    {
+        mode = { "n" },
         lhs = "<leader>;",
         rhs = "<cmd> NvimTreeFindFileToggle <CR>",
         options = { silent = true },
