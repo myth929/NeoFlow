@@ -40,9 +40,7 @@ local packer_install_tbl = {
 
     ['nvim-lualine/lualine.nvim'] = {},
 
-    ["lewis6991/gitsigns.nvim"] = {
-        ft = "gitcommit"
-    },
+    ["lewis6991/gitsigns.nvim"] = {},
 
     ['projekt0n/github-nvim-theme'] = {},
 
@@ -51,7 +49,7 @@ local packer_install_tbl = {
         requires = { {'nvim-lua/plenary.nvim'} }
     },
 
-    -- ["lukas-reineke/indent-blankline.nvim"] = {},
+    ["lukas-reineke/indent-blankline.nvim"] = {},
 }
 
 return packer_install_tbl
