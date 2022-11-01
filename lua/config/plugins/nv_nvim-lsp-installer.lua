@@ -10,7 +10,6 @@ local M = {
         tsserver = require("config.lsp.tsserver"),
         html = require("config.lsp.html"),
         cssmodules_ls = require("config.lsp.cssmodules_ls"),
-        volar = require("config.lsp.volar"),
         yamlls = require("config.lsp.yamlls"),
         jsonls = require("config.lsp.jsonls"),
     },

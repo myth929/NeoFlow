@@ -1,3 +1,4 @@
+local CONSTANT = require("utils.constant")
 local M = {}
 
 function M.before() end
@@ -6,6 +7,12 @@ function M.load()
     local ok, m = pcall(require, "nvim-treesitter.configs")
     if not ok then
         return
+    end
+
+    -- use Git instead of curl for downloading the parsers
+    require("nvim-treesitter.install").prefer_git = true
+    for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
+        config.install_info.url = config.install_info.url:gsub("https://github.com/", CONSTANT.githubSource)
     end
 
     M.treesitter = m
