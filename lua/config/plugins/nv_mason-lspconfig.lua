@@ -11,7 +11,7 @@ function M.load()
     M.masonLspConfig = m
 
     M.masonLspConfig.setup({
-        ensure_installed = {"cssls", "eslint", "html", "jsonls", "tsserver", "volar"},
+        ensure_installed = {"cssls", "eslint", "html", "jsonls", "tsserver", "volar", "stylelint_lsp"},
         automatic_installation = true,
     })
 
