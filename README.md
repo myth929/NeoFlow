@@ -25,3 +25,14 @@ $ tree ~/.config/nvim
 
 ## 插件下载、更新、删除插件
 `:PackerSync`
+
+## LSP 命令
+```
+:Mason - opens a graphical status window
+:MasonInstall <package> ... - installs/reinstalls the provided packages
+:MasonUninstall <package> ... - uninstalls the provided packages
+:MasonUninstallAll - uninstalls all packages
+:MasonLog - opens the mason.nvim log file in a new tab window
+:LspInstall [<server>...] - installs the provided servers
+:LspUninstall <server> ... - uninstalls the provided servers
+```

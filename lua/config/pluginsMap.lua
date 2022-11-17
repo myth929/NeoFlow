@@ -14,17 +14,10 @@ local packer_install_tbl = {
 
     --------------- LSP ---------------
     ["neovim/nvim-lspconfig"] = {},
+    ["williamboman/mason.nvim"] = {},
+    ["williamboman/mason-lspconfig.nvim"] = {},
     ["jose-elias-alvarez/null-ls.nvim"] = {
-        after = { "nvim-lspconfig" },
-    },
-    ["williamboman/nvim-lsp-installer"] = {
-        after = { "nvim-lspconfig", "null-ls.nvim" },
-    },
-    ["j-hui/fidget.nvim"] = {
-        after = { "nvim-lsp-installer" },
-    },
-    ["kosayoda/nvim-lightbulb"] = {
-        after = { "nvim-lsp-installer" },
+        requires = { {'nvim-lua/plenary.nvim'} }
     },
 
     ----------- nvim-tree -----------
