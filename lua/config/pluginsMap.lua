@@ -17,32 +17,34 @@ local packer_install_tbl = {
     ["williamboman/mason.nvim"] = {},
     ["williamboman/mason-lspconfig.nvim"] = {},
     ["jose-elias-alvarez/null-ls.nvim"] = {
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {"nvim-lua/plenary.nvim"} }
     },
 
     ----------- nvim-tree -----------
     ["kyazdani42/nvim-web-devicons"] = {
         module = "nvim-web-devicons",
     },
-    ['kyazdani42/nvim-tree.lua'] = {},
+    ["kyazdani42/nvim-tree.lua"] = {},
 
     ----------- Code Editor -----------
     ["windwp/nvim-autopairs"] = {
         event = { "InsertEnter" },
     },
 
-    ['nvim-lualine/lualine.nvim'] = {},
+    ["nvim-lualine/lualine.nvim"] = {},
 
     ["lewis6991/gitsigns.nvim"] = {},
 
-    ['projekt0n/github-nvim-theme'] = {},
+    ["lukas-reineke/indent-blankline.nvim"] = {},
+
+    ["EdenEast/nightfox.nvim"] = {},
 
     ["nvim-telescope/telescope.nvim"] = {
         cmd = "Telescope",
-        requires = { {'nvim-lua/plenary.nvim'} }
+        requires = { {"nvim-lua/plenary.nvim"} }
     },
-
-    ["lukas-reineke/indent-blankline.nvim"] = {},
+    -- TODO add
+    -- ["nanozuki/tabby.nvim"] = {}
 }
 
 return packer_install_tbl
