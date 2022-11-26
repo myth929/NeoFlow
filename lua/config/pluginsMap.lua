@@ -26,6 +26,15 @@ local packer_install_tbl = {
     },
     ["kyazdani42/nvim-tree.lua"] = {},
 
+    ----------- autp complete -----------
+    ['hrsh7th/cmp-nvim-lsp'] = {},
+    ['hrsh7th/cmp-buffer'] = {},
+    ['hrsh7th/cmp-path'] = {},
+    ['hrsh7th/cmp-cmdline'] = {},
+    ['hrsh7th/nvim-cmp'] = {},
+    ['hrsh7th/cmp-vsnip'] = {},
+    ['hrsh7th/vim-vsnip'] = {},
+
     ----------- Code Editor -----------
     ["windwp/nvim-autopairs"] = {
         event = { "InsertEnter" },
