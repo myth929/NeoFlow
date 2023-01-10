@@ -1,4 +1,4 @@
-# 自用neovim config
+# neovim config
 
 ## 目录结构
 ```
