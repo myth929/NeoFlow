@@ -3,7 +3,7 @@
 
 -- :h vim.keymap.set
 
-vim.g.mapleader = ';'
+vim.g.mapleader = ";"
 
 local mapping = {}
 
@@ -14,7 +14,7 @@ mapping.register = function(group_keymap)
     end
 end
 
-mapping.register({
+mapping.register {
     {
         mode = { "n" },
         lhs = "<leader>x",
@@ -53,7 +53,7 @@ mapping.register({
     {
         mode = { "n" },
         lhs = "<leader>f",
-        rhs = 'ggVG=',
+        rhs = "ggVG=",
         options = { silent = true },
         description = "code format",
     },
@@ -94,6 +94,6 @@ mapping.register({
     --     options = { silent = true, expr = true },
     --     description = "Move down one line",
     -- },
-})
+}
 
 return mapping

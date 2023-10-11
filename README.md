@@ -7,7 +7,7 @@ $ tree ~/.config/nvim
 ├── ftplugin                      -- 目录，存放不同文件类型的差异化配置文件
 ├── snippets                      -- 目录，存放用户自定义的代码片段文件
 ├── lua                           -- 目录，neovim 配置主目录
-│   ├── config                 -- 目录，neovim 主配置目录
+│   ├── config                    -- 目录，neovim 主配置目录
 │   │   ├── dap                   -- 目录，存放 DAP 配置文件
 │   │   ├── lsp                   -- 目录，存放 LSP 配置文件
 │   │   ├── plugins               -- 目录，存放各个插件的配置文件

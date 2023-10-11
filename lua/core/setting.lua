@@ -2,22 +2,22 @@
 -- Description: neovim 配置
 
 -- :help options
-vim.g.mapleader = ';'
+vim.g.mapleader = ";"
 
-vim.opt.shortmess:append('c')
+vim.opt.shortmess:append "c"
 vim.opt.list = true
-vim.opt.listchars:append('space:⋅')
+vim.opt.listchars:append "space:⋅"
 
 local settings = {
     backup = false, -- creates a backup file
-    -- clipboard = 'unnamedplus' -- 使用系统剪切板，需要安装 xsel 依赖
+    -- clipboard = 'unnamedplus', -- 使用系统剪切板，需要安装 xsel 依赖
     cmdheight = 1, -- more space in the neovim command line for displaying messages
-    completeopt = { 'menuone', 'noselect' }, -- mostly just for cmp
+    completeopt = { "menuone", "noselect" }, -- mostly just for cmp
     conceallevel = 0, -- so that `` is visible in markdown files
-    fileencoding = 'utf-8', -- the encoding written to a file
+    fileencoding = "utf-8", -- the encoding written to a file
     hlsearch = true, -- highlight all matches on previous search pattern
     ignorecase = true, -- ignore case in search patterns
-    mouse = 'a', -- allow the mouse to be used in neovim
+    mouse = "a", -- allow the mouse to be used in neovim
     pumheight = 10, -- pop up menu height
     showmode = false, -- we don't need to see things like -- INSERT -- anymore
     showtabline = 2, -- always show tabs
@@ -39,13 +39,13 @@ local settings = {
     number = true, -- set numbered lines
     relativenumber = false, -- set relative numbered lines
     numberwidth = 4, -- set number column width to 2 {default 4}
-    signcolumn = 'yes', -- always show the sign column, otherwise it would shift the text each time
+    signcolumn = "yes", -- always show the sign column, otherwise it would shift the text each time
     wrap = true, -- display lines as one long line
     scrolloff = 8, -- is one of my fav
     sidescrolloff = 8,
     -- guifont = "monospace:h17" -- the font used in graphical neovim applications
 
-    list = true
+    list = true,
 }
 
 for key, value in pairs(settings) do
