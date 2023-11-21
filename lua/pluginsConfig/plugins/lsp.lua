@@ -7,22 +7,22 @@ return {
             require("mason").setup({
 
                 ui = {
-                  icons = {
-                    package_pending = " ",
-                    package_installed = "󰄳 ",
-                    package_uninstalled = " 󰚌",
-                  },
+                    icons = {
+                        package_pending = " ",
+                        package_installed = "󰄳 ",
+                        package_uninstalled = " 󰚌",
+                    },
 
-                  keymaps = {
-                    toggle_server_expand = "<CR>",
-                    install_server = "i",
-                    update_server = "u",
-                    check_server_version = "c",
-                    update_all_servers = "U",
-                    check_outdated_servers = "C",
-                    uninstall_server = "X",
-                    cancel_installation = "<C-c>",
-                  },
+                    keymaps = {
+                        toggle_server_expand = "<CR>",
+                        install_server = "i",
+                        update_server = "u",
+                        check_server_version = "c",
+                        update_all_servers = "U",
+                        check_outdated_servers = "C",
+                        uninstall_server = "X",
+                        cancel_installation = "<C-c>",
+                    },
                 },
 
                 max_concurrent_installers = 10,
@@ -50,7 +50,7 @@ return {
                 -- The first entry (without a key) will be the default handler
                 -- and will be called for each installed server that doesn't have
                 -- a dedicated handler.
-                function (server_name) -- default handler (optional)
+                function(server_name) -- default handler (optional)
                     require("lspconfig")[server_name].setup {}
                 end
             }

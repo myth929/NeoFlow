@@ -8,6 +8,10 @@ vim.opt.shortmess:append "c"
 vim.opt.list = true
 vim.opt.listchars:append "space:⋅"
 
+-- nvim-tree need disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 local settings = {
     backup = false, -- creates a backup file
     -- clipboard = 'unnamedplus', -- 使用系统剪切板，需要安装 xsel 依赖
