@@ -14,7 +14,7 @@ local nvimTreeSetupConfig = {
     },
     git = {
         enable = true,
-        ignore = true,
+        ignore = false,
     },
     filesystem_watchers = {
         enable = true, -- 如果设置为 true，将启用文件系统的观察器，用于自动刷新树形浏览器。

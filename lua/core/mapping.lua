@@ -52,15 +52,8 @@ mapping.register {
     },
     {
         mode = { "n" },
-        lhs = "<leader>f",
-        rhs = "ggVG=",
-        options = { silent = true },
-        description = "code format",
-    },
-    {
-        mode = { "n" },
         lhs = "<leader>;",
-        rhs = "<cmd> NvimTreeFindFileToggle <CR>",
+        rhs = "<cmd>NvimTreeFindFileToggle<CR>",
         options = { silent = true },
         description = "nvim tree",
     },
@@ -81,19 +74,24 @@ mapping.register {
     {
         mode = { "n" },
         lhs = "<leader>g",
-        rhs = "<cmd> Telescope git_status <CR>",
+        rhs = "<cmd>Telescope git_status<CR>",
         options = { silent = true },
         description = "git_status",
     },
-    -- {
-    --     mode = { "n", "x" },
-    --     lhs = "j",
-    --     rhs = function()
-    --         return vim.v.count > 0 and "j" or "gj"
-    --     end,
-    --     options = { silent = true, expr = true },
-    --     description = "Move down one line",
-    -- },
+    {
+        mode = { "n" },
+        lhs = "<leader>w",
+        rhs = "<cmd>BufferLineCyclePrev<cr>",
+        options = { silent = true },
+        description = "Prev buffer",
+    },
+    {
+        mode = { "n" },
+        lhs = "<leader>b",
+        rhs = "<cmd>BufferLineCycleNext<cr>",
+        options = { silent = true },
+        description = "Next buffer",
+    },
 }
 
 return mapping
