@@ -80,17 +80,31 @@ mapping.register {
     },
     {
         mode = { "n" },
-        lhs = "<leader>w",
+        lhs = "<leader>b",
         rhs = "<cmd>BufferLineCyclePrev<cr>",
         options = { silent = true },
         description = "Prev buffer",
     },
     {
         mode = { "n" },
-        lhs = "<leader>b",
+        lhs = "<leader>w",
         rhs = "<cmd>BufferLineCycleNext<cr>",
         options = { silent = true },
         description = "Next buffer",
+    },
+    {
+        mode = { "n" },
+        lhs = "gk",
+        rhs = "<cmd>HopWord<cr>",
+        options = { silent = true },
+        description = "单词跳转",
+    },
+    {
+        mode = { "n" },
+        lhs = "gl",
+        rhs = "<cmd>HopLine<cr>",
+        options = { silent = true },
+        description = "行跳转",
     },
 }
 
