@@ -1,7 +1,7 @@
 local nvimTreeSetupConfig = {
-    hijack_cursor = true,                       -- 如果设置为 true，树形浏览器将劫持并锁定光标位置，使其一直位于树形浏览器的当前文件上。
+    hijack_cursor = true,                      -- 如果设置为 true，树形浏览器将劫持并锁定光标位置，使其一直位于树形浏览器的当前文件上。
     hijack_unnamed_buffer_when_opening = true, -- 如果设置为 true，当打开文件时，树形浏览器将劫持未命名缓冲区。
-    sync_root_with_cwd = true,                  -- 如果设置为 true，树形浏览器将同步其根目录与当前工作目录。
+    sync_root_with_cwd = true,                 -- 如果设置为 true，树形浏览器将同步其根目录与当前工作目录。
     update_focused_file = {
         enable = true,
         update_root = false,
@@ -67,6 +67,11 @@ local nvimTreeSetupConfig = {
     },
 }
 
+local function open_nvim_tree()
+    -- open the tree
+    require("nvim-tree.api").tree.open()
+end
+
 return {
     {
         "nvim-tree/nvim-tree.lua",
@@ -80,6 +85,8 @@ return {
         },
         config = function()
             require("nvim-tree").setup(nvimTreeSetupConfig)
+            -- open the tree on startup
+            vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
         end,
     }
 }
