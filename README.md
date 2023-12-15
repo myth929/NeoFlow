@@ -3,10 +3,10 @@
 ## Install
 ```
 # Linux / Macos (unix)
-git clone https://github.com/myth929/nvim.git ~/.config/nvim --depth 1 && nvim
+git clone https://github.com/myth929/NeoFlow.git ~/.config/nvim --depth 1 && nvim
 
 # Windows
-git clone https://github.com/myth929/nvim.git $HOME\AppData\Local\nvim --depth 1 && nvim
+git clone https://github.com/myth929/NeoFlow.git $HOME\AppData\Local\nvim --depth 1 && nvim
 ```
 
 ## Uninstall
