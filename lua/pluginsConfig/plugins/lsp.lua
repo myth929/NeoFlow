@@ -43,7 +43,10 @@ return {
         config = function()
             local masonLspConfig = require("mason-lspconfig")
             masonLspConfig.setup {
-                ensure_installed = { "lua_ls", "cssls", "eslint", "html", "tsserver", "volar", "stylelint_lsp", "jsonls" },
+                ensure_installed = {
+                    "lua_ls", "cssls", "eslint", "html", "tsserver", "volar",
+                    "stylelint_lsp", "jsonls", "golangci_lint_ls", "rust_analyzer"
+                },
             }
             -- 自动启动lsp服务
             masonLspConfig.setup_handlers {
