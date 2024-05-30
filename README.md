@@ -7,6 +7,9 @@ git clone https://github.com/myth929/NeoFlow.git ~/.config/nvim --depth 1 && nvi
 
 # Windows
 git clone https://github.com/myth929/NeoFlow.git $HOME\AppData\Local\nvim --depth 1 && nvim
+
+# install font (optional)
+brew install font-monofur-nerd-font
 ```
 
 ## Uninstall
