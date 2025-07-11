@@ -2,3 +2,4 @@
 .vscode/
 plugin
 .undo/
+.DS_Store
