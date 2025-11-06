@@ -3,9 +3,9 @@
 
 -- :help options
 vim.bo.expandtab = true
-vim.bo.shiftwidth = 4
-vim.bo.tabstop = 4
-vim.bo.softtabstop = 4
+vim.bo.shiftwidth = 2
+vim.bo.tabstop = 2
+vim.bo.softtabstop = 2
 
 vim.g.mapleader = ";"
 
@@ -42,8 +42,8 @@ local settings = {
     updatetime = 300,                               -- faster completion (4000ms default)
     writebackup = false,                            -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
     expandtab = true,                               -- 设置缩进用空格来表示
-    shiftwidth = 4,                                 -- 表示每一级缩进的长度
-    tabstop = 4,                                    -- insert 4 spaces for a tab
+    shiftwidth = 2,                                 -- 表示每一级缩进的长度
+    tabstop = 2,                                    -- insert 2 spaces for a tab
     cursorline = true,                              -- highlight the current line
     number = true,                                  -- set numbered lines
     relativenumber = false,                         -- set relative numbered lines
