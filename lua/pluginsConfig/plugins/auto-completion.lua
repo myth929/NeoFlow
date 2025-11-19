@@ -7,6 +7,13 @@ return {
         ['<Tab>'] = { 'select_next', 'fallback' },
         ['<S-Tab>'] = { 'select_prev', 'fallback' },
       },
+      completion = {
+        list = {
+          selection = {
+            preselect = false, -- 不预选第一项
+          },
+        },
+      },
       signature = {
         enabled = true,
       },
