@@ -1,34 +1,35 @@
-local CONSTANT = require "utils.constant"
+-- 需要安装的 parser(main 分支用 parser 名,非 filetype)
+local parsers = {
+    "go", "rust", "json", "lua", "javascript", "typescript",
+    "vue", "tsx", "html", "css", "markdown", "markdown_inline",
+}
+
+-- parser 名 -> 启用高亮的 filetype。名字与 filetype 不一致时需显式映射；
+-- markdown_inline 由 markdown 注入，无独立 filetype，不在此列。
+local filetypes = {
+    "go", "rust", "json", "lua", "javascript", "typescript",
+    "vue", "typescriptreact", "html", "css", "markdown",
+}
 
 return {
     {
         "nvim-treesitter/nvim-treesitter",
-        init = function()
-            -- use Git instead of curl for downloading the parsers
-            require("nvim-treesitter.install").prefer_git = true
-            for _, config in pairs(require("nvim-treesitter.parsers").get_parser_configs()) do
-                config.install_info.url = config.install_info.url:gsub("https://github.com/", CONSTANT.githubSource)
-            end
-        end,
-        cmd = { "TSInstall", "TSBufEnable", "TSBufDisable", "TSModuleInfo" },
+        branch = "main",
+        lazy = false, -- main 分支不支持懒加载
         build = ":TSUpdate",
         config = function()
-            require("nvim-treesitter.configs").setup {
-                -- 安装 language parser
-                -- :TSInstallInfo 命令查看支持的语言
-                ensure_installed = { "go", "rust", "json", "lua", "javascript", "typescript", "vue", "tsx", "html", "css" },
+            require("nvim-treesitter").install(parsers)
 
-                -- 启用代码高亮功能
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                },
-
-                -- 启用基于Treesitter的代码格式化(=) . NOTE: This is an experimental feature.
-                indent = {
-                    enable = true,
-                },
-            }
+            -- main 分支不再自动挂载高亮，需自行在 FileType 时启用
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = filetypes,
+                callback = function()
+                    -- install() 异步，首启/更新后 parser 可能尚未编译完，pcall 兜底，下次打开自愈
+                    pcall(vim.treesitter.start)
+                    -- 基于 treesitter 的缩进（实验性）
+                    vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+                end,
+            })
         end,
     },
 }

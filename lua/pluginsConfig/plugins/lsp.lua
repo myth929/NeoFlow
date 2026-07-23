@@ -17,7 +17,7 @@ return {
       {
         "mason-org/mason-lspconfig.nvim",
         opts = {
-          ensure_installed = { "lua_ls", "cssls", "html", "ts_ls", "jsonls", "rust_analyzer" },
+          ensure_installed = { "lua_ls", "cssls", "html", "ts_ls", "jsonls", "rust_analyzer", "pyright" },
         },
       },
     },
@@ -32,7 +32,7 @@ return {
         end,
       })
 
-      vim.lsp.enable({ "lua_ls", "cssls", "html", "ts_ls", "jsonls", "rust_analyzer" })
+      vim.lsp.enable({ "lua_ls", "cssls", "html", "ts_ls", "jsonls", "rust_analyzer", "pyright" })
     end,
   },
 }
